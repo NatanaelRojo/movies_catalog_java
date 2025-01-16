@@ -10,5 +10,5 @@ public interface IMovieCatalog {
 
     public Movie getMovie(String title);
 
-    public boolean updateMovie(Movie movie);
+    public boolean updateMovie(String title, Movie newMovie);
 }
