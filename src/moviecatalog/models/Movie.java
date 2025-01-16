@@ -9,7 +9,13 @@ public class Movie implements Serializable {
     private int rating;
 
     public Movie() {
-        // Empty constructor
+    }
+    // Empty constructor
+
+    public Movie(String title, String description, int rating) {
+        this.title = title;
+        this.description = description;
+        this.rating = rating;
     }
 
     public String getTitle() {
@@ -69,4 +75,10 @@ public class Movie implements Serializable {
             return false;
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Title: " + title + "\nDescription: " + description + "\nRating: " + rating;
+    }
+
 }
