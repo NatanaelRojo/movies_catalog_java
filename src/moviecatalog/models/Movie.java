@@ -9,8 +9,8 @@ public class Movie implements Serializable {
     private int rating;
 
     public Movie() {
+        // Empty constructor
     }
-    // Empty constructor
 
     public Movie(String title, String description, int rating) {
         this.title = title;
@@ -80,5 +80,4 @@ public class Movie implements Serializable {
     public String toString() {
         return "Title: " + title + "\nDescription: " + description + "\nRating: " + rating;
     }
-
 }
