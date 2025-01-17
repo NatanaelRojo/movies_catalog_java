@@ -1,6 +1,5 @@
 package moviecatalog.interfaces;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import moviecatalog.models.Movie;
