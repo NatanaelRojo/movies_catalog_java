@@ -18,8 +18,14 @@ public class MovieCatalog implements IMovieCatalog {
     }
 
     @Override
-    public boolean deleteMovie(Movie movie) {
-        return this.movies.remove(movie);
+    public boolean deleteMovie(String title) {
+        Movie foundMovie = this.getMovie(title);
+
+        if (!foundMovie.isEmpty()) {
+            return this.movies.remove(foundMovie);
+        }
+
+        return false;
     }
 
     @Override
@@ -36,9 +42,9 @@ public class MovieCatalog implements IMovieCatalog {
     }
 
     @Override
-    public boolean updateMovie(String title, Movie newMovie) {
+    public boolean updateMovie(Movie newMovie) {
         for (Movie movie : this.movies) {
-            if (title.equals(movie.getTitle())) {
+            if (movie.getTitle().equals(newMovie.getTitle())) {
                 movie.setTitle(newMovie.getTitle());
                 movie.setDescription(newMovie.getDescription());
                 movie.setRating(newMovie.getRating());
@@ -49,4 +55,7 @@ public class MovieCatalog implements IMovieCatalog {
         return false;
     }
 
+    public ArrayList<Movie> getMovies() {
+        return this.movies;
+    }
 }

@@ -80,4 +80,10 @@ public class Movie implements Serializable {
     public String toString() {
         return "Title: " + title + "\nDescription: " + description + "\nRating: " + rating;
     }
+
+    public boolean isEmpty() {
+        return (title == null || title.isEmpty()) &&
+                (description == null || description.isEmpty()) &&
+                rating == 0;
+    }
 }
